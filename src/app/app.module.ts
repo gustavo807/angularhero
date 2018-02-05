@@ -11,6 +11,9 @@ import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PostsComponent } from './posts/posts.component';
+import { PostService } from './post.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,14 +22,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [ HeroService, MessageService ],
+  providers: [ HeroService, MessageService, PostService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
