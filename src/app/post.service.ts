@@ -4,14 +4,16 @@ import { HttpClient , HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
+import { Inject } from '@angular/core';
 
 @Injectable()
 export class PostService {
 
-  private url = 'https://jsonplaceholder.typicode.com/posts';
+  //private url = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(
-    private http : HttpClient
+    private http : HttpClient,
+    @Inject('url') private url
   ) { }
 
   getPosts() : Observable<Post[]>{

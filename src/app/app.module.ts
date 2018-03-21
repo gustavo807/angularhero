@@ -14,7 +14,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostService } from './post.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { PokemonsComponent } from './pokemons/pokemons.component';
+import { PokemonService } from './pokemon.service';
+import { HttpModule } from '@angular/http';
+import { DataService } from './data.service';
+import { PeopleComponent } from './people/people.component';
 
 @NgModule({
   declarations: [
@@ -23,15 +27,18 @@ import { HttpClientModule } from '@angular/common/http';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    PostsComponent
+    PostsComponent,
+    PokemonsComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    HttpModule
   ],
-  providers: [ HeroService, MessageService, PostService ],
+  providers: [ HeroService, MessageService, PokemonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
